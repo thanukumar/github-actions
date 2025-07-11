@@ -23,7 +23,7 @@ jobs:
 
       - name: Run shell script
         run: |
-         chmod +x ./github/workflows/sample.sh
-         ./github/workflows/sample.sh
+         chmod +x sample.sh
+         ./sample.sh
 
 
