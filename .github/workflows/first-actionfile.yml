@@ -13,5 +13,5 @@ jobs:
        - name: checking fils
          run: ls -a
        - name: viewing file 
-         run: cat first-actionfile.yaml
+         run: cat .github/workflows/first-actionfile.yaml
 
