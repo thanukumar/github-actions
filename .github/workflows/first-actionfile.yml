@@ -1,0 +1,17 @@
+name: my first git hub action
+
+on: push
+
+jobs:
+    myfirest_job:
+       runs-on: ubuntubuntu-latest
+       steps:
+       - name: checkoutRrepo
+         uses: actions/checkout@v4
+       - name: welcome msg
+         run: echo "Hi thanu welcome to github actions"
+       - name: checking fils
+         run: ls -a
+       - name: viewing file 
+         run: cat first-actionfile.yaml
+
