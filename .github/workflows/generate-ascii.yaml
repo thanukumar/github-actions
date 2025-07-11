@@ -1,0 +1,24 @@
+name: ascii installation
+
+on: push 
+
+jobs:
+    ascii job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkoutRrepo
+         uses: actions/checkout@v4
+
+        - name: installing ascii
+          run: sudo apt-get install cowsay -y
+
+        - name: excute cowsay cmd
+          run: cowsayb -f dragon "Run from cover, i am a dragon......rawr" >> dragon.txt
+
+        - name: file content
+          run: cat dragon.txt
+
+        - name: checkimg files
+          run: ls -a
+
+          
