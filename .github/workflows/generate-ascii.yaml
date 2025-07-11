@@ -3,11 +3,11 @@ name: ascii installation
 on: push 
 
 jobs:
-    ascii job:
+    ascii_job:
         runs-on: ubuntu-latest
         steps:
         - name: checkoutRrepo
-         uses: actions/checkout@v4
+          uses: actions/checkout@v4
 
         - name: installing ascii
           run: sudo apt-get install cowsay -y
