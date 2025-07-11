@@ -21,4 +21,9 @@ jobs:
         - name: checkimg files
           run: ls -a
 
+        - name: running script
+          run: |
+            chmod +x sample.sh
+            ./sample.sh
+
 
