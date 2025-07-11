@@ -19,7 +19,7 @@ jobs:
         run: cat dragon.txt
 
       - name: Check if sample.sh exists
-        run: ls -a .github/workflows/
+        run: ls -a  
 
       - name: Run shell script
         run: |
