@@ -4,7 +4,7 @@ on: push
 
 jobs:
     myfirest_job:
-       runs-on: ubuntubuntu-latest
+       runs-on: ubuntu-latest
        steps:
        - name: checkoutRrepo
          uses: actions/checkout@v4
