@@ -1,29 +1,27 @@
 name: ascii installation
 
-on: push 
+on: push
 
 jobs:
-    ascii_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkoutRrepo
-          uses: actions/checkout@v4
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-        - name: installing ascii
-          run: sudo apt-get install cowsay -y
+      - name: Installing cowsay
+        run: sudo apt-get install cowsay -y
 
-        - name: excute cowsay cmd
-          run: cowsay -f dragon "Run from cover, i am a dragon......rawr" >> dragon.txt
+      - name: Execute cowsay command
+        run: cowsay -f dragon "Run from cover, I am a dragon......rawr" >> dragon.txt
 
-        - name: file content
-          run: cat dragon.txt
+      - name: Show file content
+        run: cat dragon.txt
 
-        - name: checkimg files
-          run: ls -a .github/workflows/sample.sh
+      - name: Check if sample.sh exists
+        run: ls -a .github/workflows/
 
-        - name: running script
-          run: |
-           sudo chmod +x .github/workflows/sample.sh
-            ./.github/workflows/sample.sh
-
-
+      - name: Run shell script
+        run: |
+          chmod +x .github/workflows/sample.sh
+          .github/workflows/sample.sh
