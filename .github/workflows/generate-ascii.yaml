@@ -19,11 +19,11 @@ jobs:
           run: cat dragon.txt
 
         - name: checkimg files
-          run: ls -a
+          run: ls -a .github/workflows/sample.sh
 
         - name: running script
           run: |
-            chmod +x .github/workflows/sample.sh
+           sudo chmod +x .github/workflows/sample.sh
             ./.github/workflows/sample.sh
 
 
