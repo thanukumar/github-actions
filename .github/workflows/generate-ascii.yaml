@@ -21,6 +21,9 @@ jobs:
       - name: Check if sample.sh exists
         run: ls -a  
 
+      - name: Check file type
+        run: file sample.sh
+
       - name: Run shell script
         run: |
          chmod +x sample.sh
