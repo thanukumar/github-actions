@@ -22,11 +22,11 @@ jobs:
         run: ls -a  
 
       - name: Check file type
-        run: file sample.sh
+        run: cat .github/workflows/sample.sh
 
       - name: Run shell script
         run: |
-         chmod +x sample.sh
-         bash sample.sh
+         chmod +x .github/workflows/sample.sh
+         bash .github/workflows/sample.sh
 
 
