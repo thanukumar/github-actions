@@ -27,6 +27,6 @@ jobs:
       - name: Run shell script
         run: |
          chmod +x sample.sh
-         ./sample.sh
+         bash sample.sh
 
 
