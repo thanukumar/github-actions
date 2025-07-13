@@ -18,9 +18,9 @@ jobs:
       - name: Show file content
         run: cat dragon.txt
 
-      - name: Check if sample.sh exists
-        run: ls -a  
-
+      - name: List all files
+        run: ls -R
+ 
       - name: Check file type
         run: cat .github/workflows/sample.sh
 
