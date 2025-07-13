@@ -1,4 +1,4 @@
-name: multiplejob
+name: upload-dowload
 
 on: 
    push
@@ -43,7 +43,7 @@ jobs:
           uses: actions/download-artifact@v4
           with: 
              name: uploading dragon
-             
+
         - name: Show file content
           run: cat dragon.txt
 
