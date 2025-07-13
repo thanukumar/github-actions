@@ -1,0 +1,44 @@
+name: multiplejob
+
+on: 
+   push
+
+jobs: 
+    build_job1:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Installing cowsay
+        run: sudo apt-get install cowsay -y
+
+      - name: Execute cowsay command
+        run: cowsay -f dragon "Run from cover, I am a dragon......rawr" >> dragon.txt
+
+      - name: Show file content
+        run: cat dragon.txt
+
+      - name: sleep 30sec
+        run: sleep 30    
+
+    test_job2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: sleep 10 sec
+          run: sleep 10
+
+        - name: checking dragon
+          run: grep -i "dragon" dragon.txt
+      
+    deploy_job3:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Show file content
+          run: cat dragon.txt
+
+        - name: Deploy
+          run: echo "Deploying...."
+
+
+
+
+
+
