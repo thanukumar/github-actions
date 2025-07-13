@@ -8,10 +8,13 @@ jobs:
        steps:
        - name: checkoutRrepo
          uses: actions/checkout@v4
+
        - name: welcome msg
          run: echo "Hi thanu welcome to github actions"
+
        - name: checking fils
          run: ls -a
+         
        - name: viewing file 
          run: cat .github/workflows/first-actionfile.yaml
                                      
