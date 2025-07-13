@@ -1,5 +1,5 @@
 #!/bin/sh
 echo "Hi thanu welcome to github actions"
 echo " checking fils "
-ls -a
+ls 
 cat .github/workflows/first-actionfile.yml 
