@@ -19,7 +19,9 @@ jobs:
         run: cat dragon.txt
 
       - name: List all files
-        run: ls -R
+        run: |
+         cd .github/workflows
+         ls -a
  
       - name: Check file type
         run: cat .github/workflows/sample.sh
