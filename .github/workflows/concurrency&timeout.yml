@@ -43,7 +43,7 @@ jobs:
     steps:
       - name: concurrency 
         timeout-minutes: 1
-        run: echo "Deploying... and checking cuncurrency and timeout for job oo stpes to complete
+        run: echo Deploying... and checking cuncurrency and timeout for job oo stpes to complete
        
       - name: using sleep
         timeout-minutes: 2
