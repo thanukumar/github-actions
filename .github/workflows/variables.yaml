@@ -13,26 +13,20 @@ jobs:
           CONTAINER_REGISTRY: docker.io
           DOCKER_USERNAME: thanusn308@gmail.com
           IMAGE_NAME: github-actions-nginx
-        run: |
-          echo "Building Docker image..."
-          docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest .
+        run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest .
 
       - name: Docker Login
         env:
           DOCKER_USERNAME: thanusn308@gmail.com
           DOCKER_PASSWORD: Thanu1235
-        run: |
-          echo "Logging into Docker Hub..."
-          echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-Thanu
+        run: echo $DOCKER_PASSWORD | docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
 
       - name: Docker Publish
         env:
           CONTAINER_REGISTRY: docker.io
           DOCKER_USERNAME: thanusn308@gmail.com
           IMAGE_NAME: github-actions-nginx
-        run: |
-          echo "Pushing Docker image to registry..."
-          docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+        run: echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
 
 
 
