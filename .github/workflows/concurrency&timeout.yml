@@ -1,4 +1,4 @@
-name: Event trigger workflows
+name: concurrency and timeout
 
 on: 
     # workflow_ dispatch explain how job need to trigger eg: webhook
