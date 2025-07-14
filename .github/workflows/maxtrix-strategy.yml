@@ -1,0 +1,24 @@
+name: matrix strategy
+
+on: 
+  push
+
+jobs:
+  deploy-on-ubuntu: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo docker details
+        run: docker info
+
+      - name: Run img
+        run: docker run hello-world
+
+  deploy-on-windows:
+    runs-on: windows-latest
+    steps:   
+      - name: echo docker details
+        run: docker info
+
+      - name: Run img
+        run: docker run hello-world     
+              
