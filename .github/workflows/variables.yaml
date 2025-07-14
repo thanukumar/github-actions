@@ -1,0 +1,49 @@
+name: Exploring variables
+
+on:
+  push:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Docker Build
+        env:
+          CONTAINER_REGISTRY: docker.io
+          DOCKER_USERNAME: thanusn308@gmail.com
+          IMAGE_NAME: github-actions-nginx
+        run: |
+          echo "Building Docker image..."
+          docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest .
+
+      - name: Docker Login
+        env:
+          DOCKER_USERNAME: thanusn308@gmail.com
+          DOCKER_PASSWORD: Thanu1235
+        run: |
+          echo "Logging into Docker Hub..."
+          echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-Thanu
+
+      - name: Docker Publish
+        env:
+          CONTAINER_REGISTRY: docker.io
+          DOCKER_USERNAME: thanusn308@gmail.com
+          IMAGE_NAME: github-actions-nginx
+        run: |
+          echo "Pushing Docker image to registry..."
+          docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+
+
+
+# env:
+# DEPLOY_ENV: dev
+
+# jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Print env
+#        run: echo "Deploying to $DEPLOY_ENV"
+ 
+
