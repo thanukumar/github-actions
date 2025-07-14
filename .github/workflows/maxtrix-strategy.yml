@@ -4,21 +4,41 @@ on:
   push
 
 jobs:
-  deploy-on-ubuntu: 
-    runs-on: ubuntu-latest
+  deploy-on-maxtix:
+    strategy:
+        matrix:
+            os: [ubuntu-latest, ubuntu-20.04, windows-latest]
+            image: [hello-world, alpine]
+     
+
+    runs-on: ${{matrix.os}}
     steps:
       - name: echo docker details
         run: docker info
 
-      - name: Run img
-        run: docker run hello-world
+      - name: Run img on ${{matrix.os}}
+        run: docker run ${{matrix.image}}
 
-  deploy-on-windows:
-    runs-on: windows-latest
-    steps:   
-      - name: echo docker details
+
+
+ 
+
+#jobs:
+#  deploy-on-ubuntu: 
+#    runs-on: ubuntu-latest 
+#    steps:
+#      - name: echo docker details
+#        run: docker info
+
+#      - name: Run img
+#       run: docker run hello-world
+
+#  deploy-on-windows:
+#    runs-on: windows-latest
+#    steps:   
+#     - name: echo docker details
         run: docker info
 
-      - name: Run img
-        run: docker run hello-world     
+#      - name: Run img
+#        run: docker run hello-world     
               
