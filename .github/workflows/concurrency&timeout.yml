@@ -1,13 +1,14 @@
 name: Event trigger workflows
 
 on: 
-  workflow_dispatch:
-    
+    # workflow_ dispatch explain how job need to trigger eg: webhook
+#  workflow_dispatch:  
 #  schedule:
 #    - cron: "15 4,5 * * *"   # <=== Change this value
-#  push:
+  push:
 
 jobs:
+
   docker:
     runs-on: ubuntu-latest
 
@@ -31,6 +32,65 @@ jobs:
           DOCKER_USERNAME: thanusn308@gmail.com
           IMAGE_NAME: github-actions-nginx
         run: echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+
+  Deployment-job:
+    timeout-minutes: 2
+    needs: docker
+    concurrency:
+      group: production deployment
+      cancel-in-progress: false 
+    runs-on: ubuntu-latest
+    steps:
+      - name: concurrency 
+        timeout-minutes: 1
+        run: echo "Deploying... and checking cuncurrency and timeout for job oo stpes to complete
+       
+      - name: using sleep
+        timeout-minutes: 2
+        run : sleeps 600s 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+       
+
 
 
  
