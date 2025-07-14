@@ -19,7 +19,7 @@ jobs:
         env:
           DOCKER_USERNAME: thanusn308@gmail.com
           DOCKER_PASSWORD: Thanu1235
-        run: echo $DOCKER_PASSWORD | docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
+        run: echo docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
 
       - name: Docker Publish
         env:
