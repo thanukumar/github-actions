@@ -34,7 +34,7 @@ jobs:
 #    runs-on: windows-latest
 #    steps:   
 #     - name: echo docker details
-        run: docker info
+#       run: docker info
 
 #      - name: Run img
 #        run: docker run hello-world     
