@@ -2,15 +2,12 @@ name: matrix strategy
 
 on: 
   push
-
 jobs:
   deploy-on-maxtix:
     strategy:
         matrix:
             os: [ubuntu-latest, ubuntu-20.04, windows-latest]
             image: [hello-world, alpine]
-     
-
     runs-on: ${{matrix.os}}
     steps:
       - name: echo docker details
