@@ -16,7 +16,7 @@ jobs:
               - image: alpine
                 os: windows-latest
             include:
-              - image: amd64/alphine
+              - image: amd64/alpine
                 os: ubuntu-latest     
     runs-on: ${{matrix.os}}
     steps: 
