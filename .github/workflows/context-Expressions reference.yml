@@ -1,3 +1,4 @@
+
 name: context-Expressions reference
  
 on: 
@@ -15,15 +16,8 @@ jobs:
       needs: build_job1 
       runs-on: ubuntu-latest
       steps:
-        - name: Show file content
-          run: cat dragon.txt
+        - name: Deployment status
+          run: echo deployment completed
 
         - name: Deploy
           run: echo "Deploying...."
-
-
-
-
-
-
-
