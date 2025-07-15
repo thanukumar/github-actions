@@ -1,7 +1,7 @@
 name: my first git hub action
 
 on: push
-
+ 
 jobs:
     myfirest_job:
        runs-on: ubuntu-latest
