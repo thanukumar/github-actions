@@ -6,7 +6,7 @@ jobs:
   deploy-on-maxtix:
     strategy:
         # anyjob in queue it will calcle by default its true
-        fail-fast: flase 
+        fail-fast: false 
         # it will complete 2job and next 2 it will take
         max-parallel: 2  
         matrix:
