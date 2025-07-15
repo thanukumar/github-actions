@@ -13,10 +13,10 @@ jobs:
             os: [ubuntu-latest, ubuntu-20.04, windows-latest]
             image: [hello-world, alpine]
             exclude:
-              - images: alpine
+              - image: alpine
                 os: windows-latest
             include:
-              - images: amd64/alphine
+              - image: amd64/alphine
                 os: ubuntu-latest     
     runs-on: ${{matrix.os}}
     steps: 
