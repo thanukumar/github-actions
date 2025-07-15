@@ -1,0 +1,22 @@
+name: workflow filetrs and activites
+
+on:
+  push:
+    branches: 
+      - main 
+      - '!feature/' #it will ignore all feature branches
+   # branches-ignore: 
+     #  - fetaure/*
+     # - test/**  
+  pull_request: 
+    types:
+      - opened
+      - closed
+    paths-ignore: 
+        - README.MD
+    branches: 
+       - main      
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest    
