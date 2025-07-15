@@ -1,0 +1,28 @@
+name: context-Expressions reference
+
+on: 
+   push
+
+jobs: 
+    build_job1:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Installing cowsay
+        run: sudo apt-get install cowsay -y  
+
+    deploy_job2:
+      if: github.ref == 'refs/heads/main'
+      needs: build_job1 
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deployment status
+          run: echo deployment completed
+
+        - name: Deploy
+          run: echo "Deploying...."
+
+
+
+
+
+
