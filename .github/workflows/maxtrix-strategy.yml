@@ -5,8 +5,10 @@ on:
 jobs:
   deploy-on-maxtix:
     strategy:
-        fail-fast: flase #anyjob in queue it will calcle by default its true
-        max-parallel: 2 # it will complete 2job and next 2 it will take 
+        # anyjob in queue it will calcle by default its true
+        fail-fast: flase 
+        # it will complete 2job and next 2 it will take
+        max-parallel: 2  
         matrix:
             os: [ubuntu-latest, ubuntu-20.04, windows-latest]
             image: [hello-world, alpine]
