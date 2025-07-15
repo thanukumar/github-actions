@@ -20,3 +20,7 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest    
+
+    steps:
+      - name: echo someting
+        run: echo good to go
